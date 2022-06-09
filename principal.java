@@ -1,4 +1,3 @@
-
 import java.math.BigInteger;
 import java.util.Scanner;
 
@@ -163,13 +162,16 @@ public class main {
         System.out.println("Digite o valor do coeficiente c: ");
         z = in.nextDouble();
         
-        if (Math.sqrt(Math.pow(y, 2)-(4*x*z))%1!=0){
+        if (Math.sqrt(Math.pow(y, 2)-(4*x*z))%1 != 0){
             System.out.println("Equação inválida.");
             return;
         }
-        z=Math.sqrt(Math.pow(y, 2)-(4*x*z));
-        System.out.println("\n" + "Xi = " + ((-y+z)/2*x));
-        System.out.println("Xii = " + ((-y-z)/2*x));
+        
+        z = Math.sqrt((Math.pow(y, 2))-(4*x*z));
+        System.out.println("z = " +z);
+        
+        System.out.println("\n" + "Xi = " + ((-y+z)/(2*x)));
+        System.out.println("Xii = " + ((-y-z)/(2*x)));
     }
 
     public static void calcularFibonacci() {
