@@ -2,11 +2,15 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class main {
-
+    
     private static int opcao = -1;
     private static double x;
     private static double y;
     private static double z;
+    
+    // long tempoInicial = System.currentTimeMillis();
+
+// System.out.println("o metodo executou em " + System.currentTimeMillis() - tempoInicial);
 
     public static void limparVariaveis() {
         x = 0;
@@ -135,7 +139,7 @@ public class main {
                     y = in.nextDouble();
                     System.out.println("Digite o valor da altura do prisma: ");
                     z = in.nextDouble();
-                    System.out.println("\n" + "Volume = " + (((5 * x) * y) / 2) * z);
+                    System.out.println("\n" + "Volume = " + ((5 * x * y) / 2) * z);
                     break;
 
                 default:
@@ -168,7 +172,6 @@ public class main {
         }
         
         z = Math.sqrt((Math.pow(y, 2))-(4*x*z));
-        System.out.println("z = " +z);
         
         System.out.println("\n" + "Xi = " + ((-y+z)/(2*x)));
         System.out.println("Xii = " + ((-y-z)/(2*x)));
@@ -176,17 +179,20 @@ public class main {
 
     public static void calcularFibonacci() {
         Scanner in = new Scanner(System.in);
-
+        
         System.out.println("Digite o limite da sequência.");
         BigInteger x = in.nextBigInteger();
         BigInteger y = BigInteger.valueOf(1);
         BigInteger z = BigInteger.valueOf(0);
 
+        long tempoInicial = System.currentTimeMillis();
+        
         while (y.compareTo(x) <= 0) {
             System.out.print(y + " ");
             y = y.add(z);
             z = y.subtract(z);
         }
+        System.out.println("\nTempo de execução: " + (System.currentTimeMillis() - tempoInicial));
     }
 
     public static void calcularFatorial() {
@@ -195,12 +201,15 @@ public class main {
         System.out.println("Digite o número desejado: ");
         BigInteger b = in.nextBigInteger();
         BigInteger a = b.subtract(BigInteger.valueOf(1));
+        
+        long tempoInicial = System.currentTimeMillis();
 
         while (a.compareTo((BigInteger.valueOf(0))) > 0) {
             b = b.multiply(a);
             a = a.subtract(BigInteger.valueOf(1));
         }
         System.out.println(b);
+        System.out.println("\nTempo de execução: " + (System.currentTimeMillis() - tempoInicial));
     }
 
     public static void verificarPalindromo() {
