@@ -7,10 +7,6 @@ public class main {
     private static double x;
     private static double y;
     private static double z;
-    
-    // long tempoInicial = System.currentTimeMillis();
-
-// System.out.println("o metodo executou em " + System.currentTimeMillis() - tempoInicial);
 
     public static void limparVariaveis() {
         x = 0;
@@ -192,7 +188,7 @@ public class main {
             y = y.add(z);
             z = y.subtract(z);
         }
-        System.out.println("\nTempo de execução: " + (System.currentTimeMillis() - tempoInicial));
+        System.out.println("\n\nTempo de execução: " + (System.currentTimeMillis() - tempoInicial) + " ms");
     }
 
     public static void calcularFatorial() {
@@ -209,7 +205,7 @@ public class main {
             a = a.subtract(BigInteger.valueOf(1));
         }
         System.out.println(b);
-        System.out.println("\nTempo de execução: " + (System.currentTimeMillis() - tempoInicial));
+        System.out.println("\nTempo de execução: " + (System.currentTimeMillis() - tempoInicial) + " ms");
     }
 
     public static void verificarPalindromo() {
