@@ -195,16 +195,22 @@ public class main {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Digite o número desejado: ");
+        
         BigInteger b = in.nextBigInteger();
-        BigInteger a = b.subtract(BigInteger.valueOf(1));
+        BigInteger a = b.subtract(BigInteger.valueOf(1));   
         
         long tempoInicial = System.currentTimeMillis();
-
-        while (a.compareTo((BigInteger.valueOf(0))) > 0) {
-            b = b.multiply(a);
-            a = a.subtract(BigInteger.valueOf(1));
-        }
-        System.out.println(b);
+        
+        if (b.equals(BigInteger.valueOf(0))){
+            System.out.println("\n1");
+        }             
+        else{
+            while (a.compareTo((BigInteger.valueOf(0))) > 0) {
+                b = b.multiply(a);
+                a = a.subtract(BigInteger.valueOf(1));
+            }
+            System.out.println("\n"+b);
+        } 
         System.out.println("\nTempo de execução: " + (System.currentTimeMillis() - tempoInicial) + " ms");
     }
 
