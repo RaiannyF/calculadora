@@ -2,17 +2,11 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class main {
-
+    
     private static int opcao = -1;
     private static double x;
     private static double y;
     private static double z;
-    
-    private static int a;
-    private static int b;
-    private static int c;
-    
-    BigInteger m;
 
     public static void limparVariaveis() {
         x = 0;
@@ -22,7 +16,7 @@ public class main {
 
     public static void calcularArea() {
         Scanner in = new Scanner(System.in);
-        
+
         if (opcao != 0) {
             System.out.println("-----------------------------");
             System.out.println(" 1 - Quadrado");
@@ -31,16 +25,20 @@ public class main {
             System.out.println(" 4 - Trapézio");
             System.out.println(" 5 - Losango");
             System.out.println("-----------------------------");
-            
+
             System.out.println("Opção desejada: ");
             opcao = in.nextInt();
-            
+
             switch (opcao) {
 
                 case 1:
                     System.out.println("Digite o valor do lado: ");
                     x = in.nextDouble();
-                    System.out.println("\n" + "Área = " + x*x);
+                    if(x>0){
+                        System.out.println("\n" + "Área = " + x * x);
+                    } else{
+                        System.out.println("\nValor Inválido!");
+                    }
                     break;
 
                 case 2:
@@ -48,7 +46,11 @@ public class main {
                     x = in.nextDouble();
                     System.out.println("Digite o valor do lado maior: ");
                     y = in.nextDouble();
-                    System.out.println("\n" + "Área = " + x*y);
+                    if(x<=0 || y<=0){
+                        System.out.println("\nValores Inválidos!");
+                    } else{
+                        System.out.println("\n" + "Área = " + x * y);
+                    }    
                     break;
 
                 case 3:
@@ -56,7 +58,11 @@ public class main {
                     x = in.nextDouble();
                     System.out.println("Digite o valor da altura: ");
                     y = in.nextDouble();
-                    System.out.println("\n" + "Área = " + (x*y)/2);
+                    if(x<=0 || y<=0){
+                        System.out.println("\nValores Inválidos!");
+                    } else{
+                        System.out.println("\n" + "Área = " + (x * y) / 2);
+                    } 
                     break;
 
                 case 4:
@@ -66,7 +72,11 @@ public class main {
                     y = in.nextDouble();
                     System.out.println("Digite o valor da altura: ");
                     z = in.nextDouble();
-                    System.out.println("\n" + "Área = " + ((x+y)*z)/2);    
+                    if(x<=0 || y<=0 || z<=0){
+                        System.out.println("\nValores Inválidos!"); 
+                    } else{
+                        System.out.println("\n" + "Área = " + ((x + y) * z) / 2);
+                    }    
                     break;
 
                 case 5:
@@ -74,18 +84,22 @@ public class main {
                     x = in.nextDouble();
                     System.out.println("Digite o valor da diagonal maior: ");
                     y = in.nextDouble();
-                    System.out.println("\n" + "Área = " + (x*y)/2);    
+                    if(x<=0 || y<=0){
+                        System.out.println("\nValores Inválidos!");
+                    } else{
+                        System.out.println("\n" + "Área = " + (x * y) / 2);
+                    }
                     break;
 
                 default:
                     System.out.println("Opção inválida.");
-            } 
+            }
         }
     }
 
-    public static void calcularVolume() {   
+    public static void calcularVolume() {
         Scanner in = new Scanner(System.in);
-        
+
         if (opcao != 0) {
             System.out.println("----------------------------------------");
             System.out.println(" 1 - Cubo");
@@ -94,16 +108,20 @@ public class main {
             System.out.println(" 4 - Prisma triangular");
             System.out.println(" 5 - Prisma pentagonal");
             System.out.println("----------------------------------------");
-            
+
             System.out.println("Opção desejada: ");
             opcao = in.nextInt();
-            
+
             switch (opcao) {
 
                 case 1:
                     System.out.println("Digite o valor do lado: ");
                     x = in.nextDouble();
-                    System.out.println("\n" + "Volume = " + x*x*x);
+                    if(x>0){
+                        System.out.println("\n" + "Volume = " + x * x * x);
+                    } else{
+                        System.out.println("\nValor Inválido!");
+                    }
                     break;
 
                 case 2:
@@ -113,7 +131,11 @@ public class main {
                     y = in.nextDouble();
                     System.out.println("Digite o valor da largura: ");
                     z = in.nextDouble();
-                    System.out.println("\n" + "Volume = " + x*y*z);
+                    if(x<=0 || y<=0 || z<=0){
+                        System.out.println("\nValores Inválidos!"); 
+                    } else{
+                        System.out.println("\n" + "Volume = " + x * y * z);
+                    }
                     break;
 
                 case 3:
@@ -121,7 +143,11 @@ public class main {
                     x = in.nextDouble();
                     System.out.println("Digite o valor da altura: ");
                     y = in.nextDouble();
-                    System.out.println("\n" + "Volume = " + ((x*x)*y)/3);
+                    if(x<=0 || y<=0){
+                        System.out.println("\nValores Inválidos!");
+                    } else{
+                        System.out.println("\n" + "Volume = " + ((x * x) * y) / 3);
+                    }        
                     break;
 
                 case 4:
@@ -131,7 +157,11 @@ public class main {
                     y = in.nextDouble();
                     System.out.println("Digite o valor da altura do prisma: ");
                     z = in.nextDouble();
-                    System.out.println("\n" + "Volume = " + 0.5*x*y*z);    
+                    if(x<=0 || y<=0 || z<=0){
+                        System.out.println("\nValores Inválidos!"); 
+                    } else{
+                        System.out.println("\n" + "Volume = " + 0.5 * x * y * z);
+                    }                    
                     break;
 
                 case 5:
@@ -141,58 +171,103 @@ public class main {
                     y = in.nextDouble();
                     System.out.println("Digite o valor da altura do prisma: ");
                     z = in.nextDouble();
-                    System.out.println("\n" + "Volume = " + (((5*x)*y)/2)*z);
+                    if(x<=0 || y<=0 || z<=0){
+                        System.out.println("\nValores Inválidos!"); 
+                    } else{
+                        System.out.println("\n" + "Volume = " + ((5 * x * y) / 2) * z);
+                    }          
                     break;
 
                 default:
                     System.out.println("Opção inválida.");
-            } 
+            }
         }
-        
+
     }
 
     public static void calcularRaizes() {
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Digite o valor do coeficiente a: ");
+        x = in.nextDouble();
+        
+        if(x==0){
+            System.out.println("Equação inválida.");
+            return;
+        }
+        
+        System.out.println("Digite o valor do coeficiente b: ");
+        y = in.nextDouble();
+        System.out.println("Digite o valor do coeficiente c: ");
+        z = in.nextDouble();
+        
+        if (Math.sqrt(Math.pow(y, 2)-(4*x*z))%1 != 0){
+            System.out.println("Equação inválida.");
+            return;
+        }
+        
+        z = Math.sqrt((Math.pow(y, 2))-(4*x*z));
+        
+        System.out.println("\n" + "Xi = " + ((-y+z)/(2*x)));
+        System.out.println("Xii = " + ((-y-z)/(2*x)));
     }
 
     public static void calcularFibonacci() {
         Scanner in = new Scanner(System.in);
-
+        
         System.out.println("Digite o limite da sequência.");
-        x = in.nextInt();
-        y = 1;
+        BigInteger x = in.nextBigInteger();
+        BigInteger y = BigInteger.valueOf(1);
+        BigInteger z = BigInteger.valueOf(0);
 
-        while(y <= x) {
-            System.out.print((int)y + " ");
-            y += z;
-            z = y - z;
+        long tempoInicial = System.currentTimeMillis();
+        
+        while (y.compareTo(x) <= 0) {
+            System.out.print(y + " ");
+            y = y.add(z);
+            z = y.subtract(z);
         }
+        System.out.println("\n\nTempo de execução: " + (System.currentTimeMillis() - tempoInicial) + " ms");
     }
 
-    public static void calcularFatorial() { 
+    public static void calcularFatorial() {
         Scanner in = new Scanner(System.in);
-        
+
         System.out.println("Digite o número desejado: ");
-        BigInteger b = BigInteger.valueOf(in.nextInt());
-        BigInteger a = b.subtract(BigInteger.valueOf(1)); 
         
-        while(b.compareTo((BigInteger.valueOf(0))) > 0){
-            a = a.multiply(b);
-            b = b.subtract(BigInteger.valueOf(1)); 
+        BigInteger b = in.nextBigInteger();
+        BigInteger a = b.subtract(BigInteger.valueOf(1));   
+        
+        long tempoInicial = System.currentTimeMillis();
+        
+        if (b.equals(BigInteger.valueOf(0))){
+            System.out.println("\n1");
+        }             
+        else if (b.compareTo((BigInteger.valueOf(0))) > 0){
+            while (a.compareTo((BigInteger.valueOf(0))) > 0) {
+                b = b.multiply(a);
+                a = a.subtract(BigInteger.valueOf(1));
+            }
+            System.out.println("\n"+b);
         }
-        System.out.println(a);
+        else if (b.compareTo((BigInteger.valueOf(0))) < 0){
+            System.out.println("\nNúmero inválido!");
+        } 
+        System.out.println("\nTempo de execução: " + (System.currentTimeMillis() - tempoInicial) + " ms");
     }
 
-    public static void verificarPalindromo() { 
+    public static void verificarPalindromo() {
         Scanner in = new Scanner(System.in);
-        
+
         System.out.println("Digite uma palavra.");
         String palavra = in.nextLine();
-        
-        if(palavra.equals(new StringBuilder(palavra).reverse().toString())){
+
+        if (palavra.equals(new StringBuilder(palavra).reverse().toString())) {
             System.out.println("A palavra é um palíndromo.");
-        }else{
+        } else {
             System.out.println("A palavra não é um palíndromo.");
-        }     
+        }
     }
 
     public static void main(String[] args) {
